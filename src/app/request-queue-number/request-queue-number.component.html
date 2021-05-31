@@ -1,0 +1,15 @@
+
+<div class="card text-center mx-auto mt-5" style="width: 600px; padding: 20px">
+    <h3 class="mt-3">{{title | uppercase}}</h3>
+    <hr>
+    <h4>Nomor Antrian anda:</h4>
+    <h1>{{section}}{{queueNumber}}</h1>
+    <h3>Mohon Menunggu</h3>
+    <ngx-barcode [bc-value]="value" [bc-display-value]="true"></ngx-barcode>
+    <h5>Budayakan antri untuk kenyamanan bersama</h5>
+    <h5>Terima Kasih atas kunjungan anda</h5>
+</div>
+
+<div class="text-center mt-5">
+    <button class="btn btn-primary" routerLink="/">Back to Home</button>
+</div>

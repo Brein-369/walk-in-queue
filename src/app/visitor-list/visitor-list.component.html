@@ -1,0 +1,22 @@
+<div class="text-center mt-5">
+    <button class="btn btn-primary" routerLink="/">Back to Home</button>
+</div>
+<div class="container">
+    <h1>All Visitors</h1>
+    <div *ngFor="let visitor of allVisitors">
+        <div class="card row my-3" style="">
+            <div class="card-body">
+                <h5 class="card-title">{{visitor.firstName}} {{visitor.lastName}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{visitor.date}}</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Gender: {{visitor.gender}}</li>
+                <li class="list-group-item">Birthdate: {{visitor.birthDate}}</li>
+                <li class="list-group-item">Address: {{visitor.address}}</li>
+                <li class="list-group-item">City: {{visitor.city}}</li>
+                <li class="list-group-item">Zip Code: {{visitor.zipCode}}</li>
+                <li class="list-group-item">Phone Number: {{visitor.phoneNumber}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

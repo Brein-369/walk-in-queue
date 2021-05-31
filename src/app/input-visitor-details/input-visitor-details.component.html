@@ -1,0 +1,84 @@
+<div class="container">
+    <h1 class="text-center my-5">Customer Biodata</h1>
+    <form #customerForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName"  #firstNameNGM="ngModel" [(ngModel)]="customerData.firstName" required
+                [class.is-invalid]="firstNameNGM.invalid && firstNameNGM.touched"
+                >
+                <small class="text-danger" [class.d-none]="firstNameNGM.valid || firstNameNGM.untouched">First Name must be filled</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="customerData.lastName">
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="male" value="male" name="gender" [(ngModel)]="customerData.gender">
+                  <label class="form-check-label" for="male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="female" value="female" name="gender" [(ngModel)]="customerData.gender">
+                  <label class="form-check-label" for="female">
+                    Female
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <input class="form-check-input" type="radio" id="other" value="other" name="gender" [(ngModel)]="customerData.gender">
+                  <label class="form-check-label" for="other">
+                    Other
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" class="form-control" id="birthDate" #birthDateNGM="ngModel" name="birthdate" [(ngModel)]="customerData.birthDate" required
+                [class.is-invalid]="birthDateNGM.invalid && birthDateNGM.touched"
+            >
+            <small class="text-danger" [class.d-none]="birthDateNGM.valid || birthDateNGM.untouched">Birth Date must be filled</small>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" #addressNGM="ngModel" [(ngModel)]="customerData.address" required
+                [class.is-invalid]="addressNGM.invalid && addressNGM.touched"
+                >
+                <small class="text-danger" [class.d-none]="addressNGM.valid || addressNGM.untouched">Birth Date must be filled</small>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="city">City</label>
+                <input type="text" id="city" class="form-control" name="city" #cityNGM="ngModel" [(ngModel)]="customerData.city" required
+                [class.is-invalid]="cityNGM.invalid && cityNGM.touched"
+                >
+                <small class="text-danger" [class.d-none]="cityNGM.valid || cityNGM.untouched">Birth Date must be filled</small>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zipCode">Zip</label>
+                <input type="text" class="form-control" id="zipCode" name="zipCode" [(ngModel)]="customerData.zipCode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" maxlength="12" #phoneNumberNGM="ngModel" [(ngModel)]="customerData.phoneNumber" required
+            [class.is-invalid]="phoneNumberNGM.invalid && phoneNumberNGM.touched"
+            placeholder="8888-12345678"
+            pattern="[0-9]{4}-[0-9]{4,8}">
+                <small class="text-danger" [class.d-none]="phoneNumberNGM.valid || phoneNumberNGM.untouched">Phone Number must be filled within 8-12 digits and valid format</small>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" [disabled]="customerForm.form.invalid">Generate Queue Number</button>
+            </div>
+        </div>
+    </form>
+
+</div>
