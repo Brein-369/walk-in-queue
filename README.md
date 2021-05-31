@@ -1,4 +1,4 @@
-# walk-in-queue
+# walk-in-queue (Angular + Typescript)
 
 ## Install
 
